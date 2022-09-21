@@ -142,7 +142,12 @@ function agregarProductoAlCarrito(id){
 
         console.log(carrito);
 
-        alert('Se agrego 1 unidad mas del Producto al carrito')
+        Swal.fire({
+            title: 'Se agrego 1 unidad mas del Producto al carrito',
+            icon: 'success',
+            iconColor: 'green',
+            confirmButtonColor: '#1a1b1b',
+            })
 
     }else {
         producto.cantidad = 1;
@@ -151,7 +156,13 @@ function agregarProductoAlCarrito(id){
 
         console.log(carrito);
         
-        alert('El producto fue agregado al carrito')
+        Swal.fire({
+            title: 'El producto fue agregado al carrito',
+            icon: 'success',
+            iconColor: 'green',
+            confirmButtonColor: '#1a1b1b',
+            })
+
     };
     renderizarCarrito();
     calcularTotal();
@@ -202,12 +213,25 @@ function renderizarCarrito(){
 function eliminarProductoDelCarrito(indice){
 
     carrito[indice].cantidad--;
-    alert(`Se elimino 1 unidad del producto ${carrito[indice].nombre} del carrito`);
+
+    Swal.fire({
+        title: 'Estas eliminando 1 unidad del Producto!',
+        icon: 'warning',
+        iconColor: 'yellow',
+        confirmButtonColor: '#1a1b1b',
+        })
 
     if(carrito[indice].cantidad === 0){
 
         carrito.splice(indice,1);
-        alert('El producto fue eliminado del carrito');
+
+        Swal.fire({
+            title: 'Eliminaste del carrito este producto',
+            icon: 'warning',
+            iconColor: 'yellow',
+            confirmButtonColor: '#1a1b1b',
+            })
+    
     }
 
     renderizarCarrito();
