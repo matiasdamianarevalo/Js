@@ -1,3 +1,4 @@
+// import { obtenerCarritoStorage } from "./src/storage.js"; 
 
 const bicicletas = [
     {
@@ -86,7 +87,9 @@ const bicicletas = [
     },
 ];
 
-const carrito = [];
+const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+
 
 function renderizarProductos(){
 
@@ -114,20 +117,20 @@ function renderizarProductos(){
             </div>
         </div>`;
 
-        
         tienda.appendChild(producto);
 
         producto.querySelector('button').addEventListener('click', () => {
-
+            
             agregarProductoAlCarrito(p.id);
 
         });
-
 
     });
 
 };
 renderizarProductos();
+
+
 
 
 function agregarProductoAlCarrito(id){
@@ -149,7 +152,9 @@ function agregarProductoAlCarrito(id){
             confirmButtonColor: '#1a1b1b',
             })
 
-    }else {
+    }
+    
+    else {
         producto.cantidad = 1;
 
         carrito.push(producto);
@@ -164,8 +169,10 @@ function agregarProductoAlCarrito(id){
             })
 
     };
+ 
     renderizarCarrito();
     calcularTotal();
+    
 };
 
 
@@ -174,7 +181,7 @@ function renderizarCarrito(){
     const d = document;
 
     let carritoHTML = d.querySelector('#carrito');
-
+    
     carritoHTML.innerHTML = '';
 
     carrito.forEach((p, index) => {
@@ -198,14 +205,16 @@ function renderizarCarrito(){
             </div>
         </div>`;
 
-        producto.querySelector('button').addEventListener('click', ()=>{
         
+        producto.querySelector('button').addEventListener('click', ()=>{
+
             eliminarProductoDelCarrito(index)
+            
         })
 
         carritoHTML.appendChild(producto);
     });
- 
+    
 };
 
 
@@ -216,7 +225,7 @@ function eliminarProductoDelCarrito(indice){
 
     Swal.fire({
         title: 'Estas eliminando 1 unidad del Producto!',
-        icon: 'warning',
+        icon: 'success',
         iconColor: 'yellow',
         confirmButtonColor: '#1a1b1b',
         })
@@ -227,7 +236,7 @@ function eliminarProductoDelCarrito(indice){
 
         Swal.fire({
             title: 'Eliminaste del carrito este producto',
-            icon: 'warning',
+            icon: 'success',
             iconColor: 'yellow',
             confirmButtonColor: '#1a1b1b',
             })
@@ -254,4 +263,14 @@ function calcularTotal(){
 
     t.innerHTML = `<p>$${total}</p>`
 
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
 }
+
+obtenerCarritoStorage = () => {
+    const carritoStorage = JSON.parse(localStorage.getItem('carrito'))
+    console.log(carritoStorage);
+};
+
+obtenerCarritoStorage()
+
