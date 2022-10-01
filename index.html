@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Josefin+Sans:wght@100;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/whatsapp.css">
-
     <link rel="shortcut icon" href="img/favicon.png">
-    <title>javascript</title>
+    <title>Bikestore incluyendo JS</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
@@ -27,27 +29,28 @@
 						  Productos
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item text-white-50" href="#">Mountain bike</a></li>
-							<li><a class="dropdown-item text-white-50" href="#">Route bike</a></li>
-							<li><a class="dropdown-item text-white-50" href="#">Accesorios y repuestos</a></li>
+							<li><a class="dropdown-item text-white-50" href="index.html">bicicletas</a></li>
+							<!-- <li><a class="dropdown-item text-white-50" href="#">Route bike</a></li>
+							<li><a class="dropdown-item text-white-50" href="#">Accesorios y repuestos</a></li> -->
 						</ul>
 					</li>
 					<li class="nav-menu-item">
-                        <a class="nav-link" href="#">Service</a>
+                        <a class="nav-link" href="pages/service.html">Service</a>
                     </li>
                     <li class="nav-menu-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="pages/contacto.html">Contacto</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <section class="carrito-c animated">
-            <span style="font-size:30px;cursor:pointer" id="openCar">
-              <img src="img/carrito.png" class="nav-link dropdown-toggle img-fluid" height="80px"
-              width="80px" data-bs-toggle="modal" data-bs-target="#exampleModal"></img>
-            </span>
-        </section>
     </nav>
+
+    <section class="carrito-c animated">
+        <span style="font-size:30px;cursor:pointer" id="openCar">
+          <img src="img/carrito.png" class="float-carrito rounded-pill p-2" data-bs-toggle="modal" data-bs-target="#exampleModal"></img>
+        </span>
+    </section>
+
     <section class="container">
         <div class="row text-center" id="tienda"></div>
     </section>
@@ -94,6 +97,16 @@
             </button>
         <div class="circle-anime"></div>         
     </div>
+    <footer class="container-fluid p-4">
+		<div class="row text-center">
+			<div class="footer">
+			<h4>Seguinos en</h4>
+			<a href="https://www.facebook.com/"><img class="logo-footer" src="img/facebook.png" alt="logo de red social facebook"></a>
+			<a href="https://www.instagram.com/"><img class="logo-footer" src="img/instagram.png" alt="logo de red social instagram"></a>
+			<a href="https://www.youtube.com/"><img class="logo-footer" src="img/twiter.png" alt="logo de red social twiter"></a>
+			</div>
+		</div>	
+	</footer>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/main.js"></script>
 <script src="js/whatsapp.js"></script>
