@@ -98,6 +98,9 @@ const bicicletas = [
     },
 ];
 
+// const {id:id, nombre:nombre} = bicicletas[1]
+
+// console.log(id);
 
 document.addEventListener('DOMContentLoaded', () => {
     renderizarProductos();
