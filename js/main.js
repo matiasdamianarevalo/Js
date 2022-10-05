@@ -1,4 +1,3 @@
-// import { obtenerCarritoStorage } from "./src/storage.js"; 
 
 const bicicletas = [
     {
@@ -6,86 +5,112 @@ const bicicletas = [
         "nombre": "SUPERCALIBER 9.9",
         "img": "img/SUPERCALIBER 9.9.jpg",
         "precio": 1000,
-        "cantidad": 1, 
+        "cantidad": 1,
+        "stock": 1,
     },
     {
         "id": 2,
         "nombre": "SUPERCALIBER 9.8",
         "img": "img/SUPERCALIBER 9.8.jpg",
         "precio": 970,
-        "cantidad": 1, 
+        "cantidad": 1,
+        "stock": 6,
     },
     {
         "id": 3,
         "nombre": "SUPERCALIBER 9.7",
         "img": "img/SUPERCALIBER 9.7.jpg",
         "precio": 930,
-        "cantidad": 1, 
+        "cantidad": 1,
+        "stock": 0,
     },
     {
         "id": 4,
         "nombre": "FUEL EX 7",
         "img": "img/FUEL EX 7.jpg",
         "precio": 1100,
-        "cantidad": 1, 
+        "cantidad": 1,
+        "stock": 7, 
     },
     {
         "id": 5,
         "nombre": "TOP FUEL 9.9",
         "img": "img/TOP FUEL 9.9.jpg",
         "precio": 1180,
-        "cantidad": 1, 
+        "cantidad": 1,
+        "stock": 0, 
     },
     {
         "id": 6,
         "nombre": "TOP FUEL 9.8",
         "img": "img/TOP FUEL 9.8.jpg",
         "precio": 1100,
-        "cantidad": 1, 
+        "cantidad": 1,
+        "stock": 75, 
     },
     {
         "id": 7,
         "nombre": "TOP FUEL 9.7",
         "img": "img/TOP FUEL 9.7.jpg",
         "precio": 1000,
-        "cantidad": 1, 
+        "cantidad": 1,
+        "stock": 4, 
     },
     {
         "id": 8,
         "nombre": "TOP FUEL 8",
         "img": "img/TOP FUEL 8.jpg",
         "precio": 1000,
-        "cantidad": 1, 
+        "cantidad": 1,
+        "stock": 1, 
     },
     {
         "id": 9,
         "nombre": "PROCALIBER 9.8",
         "img": "img/PROCALIBER 9.8.jpg",
         "precio": 900,
-        "cantidad": 1, 
+        "cantidad": 1,
+        "stock": 3,
     },
     {
         "id": 10,
         "nombre": "PROCALIBER 9.7",
         "img": "img/PROCALIBER 9.7.jpg",
         "precio": 900,
-        "cantidad": 1, 
+        "cantidad": 1,
+        "stock": 2,
     },
     {
         "id": 11,
         "nombre": "PROCALIBER 9.6",
         "img": "img/PROCALIBER 9.6.jpg",
         "precio": 950,
-        "cantidad": 1, 
+        "cantidad": 1,
+        "stock": 2,
     },
     {
         "id": 12,
         "nombre": "PROCALIBER 9.5",
         "img": "img/PROCALIBER 9.5.jpg",
         "precio": 850,
-        "cantidad": 1, 
+        "cantidad": 1,
+        "stock": 4,
     },
 ];
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderizarProductos();
+
+    if (localStorage.getItem('carrito')) {
+        const carrito = obtenerCarritoStorage();
+        renderizarCarrito(carrito);
+        calcularTotal(carrito);
+    }
+})
+
+
+/////operador  or ///
 
 const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
@@ -94,8 +119,8 @@ const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 function renderizarProductos(){
 
     const tienda = document.getElementById('tienda');
-
-    bicicletas.forEach((p)=> {
+    /// destructure//
+    bicicletas.forEach(({img,nombre, precio, id}) => {
 
         let producto = document.createElement('div');
         producto.classList.add('col-12');
@@ -108,11 +133,11 @@ function renderizarProductos(){
         producto.innerHTML = `
         <div class="hovercard">
             <div class="card">
-                <img src="${p.img}" class="card-img-top" alt="imagen de bicicleta SUPERCALIBER 9.9">
+                <img src="${img}" class="card-img-top" alt="imagen de bicicleta SUPERCALIBER 9.9">
                 <div class="card-body">
-                    <h3 class="card-title">${p.nombre}</h3>
-                    <p class="text-white">$${p.precio}</p>
-                    <button class="btn btn-secondary" id="${p.id}">Agregar al carrito</button>
+                    <h3 class="card-title">${nombre}</h3>
+                    <p class="text-white">$${precio}</p>
+                    <button class="btn btn-secondary" id="${id}">Agregar al carrito</button>
                 </div>
             </div>
         </div>`;
@@ -121,8 +146,9 @@ function renderizarProductos(){
 
         producto.querySelector('button').addEventListener('click', () => {
             
-            agregarProductoAlCarrito(p.id);
+            agregarProductoAlCarrito(id);
 
+            
         });
 
     });
@@ -132,13 +158,13 @@ renderizarProductos();
 
 
 
-
 function agregarProductoAlCarrito(id){
 
     let producto = bicicletas.find(producto => producto.id === id);
     
     let productoEnCarrito = carrito.find(producto => producto.id === id);
-
+    
+       /// Spread ///
     if (productoEnCarrito) {
 
         productoEnCarrito.cantidad++;
@@ -155,9 +181,10 @@ function agregarProductoAlCarrito(id){
     }
     
     else {
-        producto.cantidad = 1;
-
-        carrito.push(producto);
+        carrito.push({
+            ...producto,
+            cantidad: 1
+        });
 
         console.log(carrito);
         
@@ -172,7 +199,7 @@ function agregarProductoAlCarrito(id){
  
     renderizarCarrito();
     calcularTotal();
-    
+
 };
 
 
@@ -273,4 +300,18 @@ obtenerCarritoStorage = () => {
 };
 
 obtenerCarritoStorage()
+
+
+
+
+// //ternario
+// let promo = false, valor = 970;
+
+// valor > 970 ? (
+//     alert("OK, tienes un service gratis"),
+//     location.assign("../pages/service.html")
+// ) : (
+//     stop = true,
+//     alert("no tenemos promo vigente")
+// );
 
