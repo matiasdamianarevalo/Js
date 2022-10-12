@@ -1,0 +1,309 @@
+
+
+
+
+
+
+
+
+
+
+
+// localStorages.setItem('bienvenido', 'hola');
+// localStorages.setItem('booleano', true);
+
+
+
+
+
+
+// const multiplicar = (a, b) => a * b;
+
+// const guardarLocalStorage = (clave, valor) => {
+//     localStorage.setItem(clave, valor);
+// };
+
+// let numeroIngresado = parseInt(prompt('Ingrese un número:'));
+
+// for (let i = 1; i <= 10; i++) {
+//     guardarLocalStorage(i, multiplicar(parseInt(numeroIngresado), i));
+// }
+
+
+
+// SUPERCALIBER 9.9
+// SUPERCALIBER 9.8
+// SUPERCALIBER 9.7
+// FUEL EX 7
+// TOP FUEL 9.9
+// TOP FUEL 9.8
+// TOP FUEL 9.7
+// TOP FUEL 8
+// PROCALIBER 9.8
+// PROCALIBER 9.7
+// PROCALIBER 9.6
+// PROCALIBER 9.5
+
+
+
+// let regCarrera = true;
+
+// do {
+
+// let nombre = prompt('Ingrese su nombre');
+// if(nombre !== null && nombre !== ""){
+  
+// }else{
+// alert('No ingreso un nombre en el campo');
+//   break;
+
+//   }
+
+// alert('Hola '+ nombre);
+
+// let edad = Number(prompt("Ingrese su edad"));
+
+// if (edad >= 12 && edad <= 16) {
+
+// alert('Perteneces a la categoria "CAT-1 pre-juvenil”')
+
+
+// } else if (edad >= 17 && edad <= 18) {
+
+// alert('perteneces a la categoria "CAT-2 juvenil”')
+
+
+// } else if (edad >= 19 && edad <= 23) {
+
+// alert('perteneces a la categoria "CAT-3 Sub 23”')
+    
+// }else if (edad >= 24 && edad <= 30) {
+
+// alert('perteneces a la categoria "CAT-4 Élite”')
+        
+// }else if (edad >= 31 && edad <= 45) {
+
+// alert('perteneces a la categoria "CAT-5 Ciclismo máster”')
+            
+// }
+// else{
+
+// alert('No puedes inscribirte, revisa los datos ingresados, intente nuevamente.')
+
+// alert('"las categorias vigentes son: ""CAT-1 pre-juvenil, si tenes 12 a 16 años"; "CAT-2 juvenil, si tenes 17 a 18 años"; "CAT-3 Sub 23, inferiores a 23 años"; "CAT-4 Élite, más de 23 años"; "CAT-5 Ciclismo máster, superior a 30 años"')
+//   break;
+// }
+
+// function ciclismo(horario, terreno){
+
+//     const hora = horario;
+//     const terreno7 = terreno;
+    
+    
+//     alert(nombre +" de "+ edad+" años," + " su carrera sera en el circuito de: " + terreno7 +" de distancia" + " a las " + hora+"hs");
+
+//     let userEmail = prompt('Ingrese su correo electronico');
+
+//     let confirmUserEmail = prompt('Confirme su correo electronico');
+
+//     if (userEmail === confirmUserEmail) {
+    
+//     alert('El correo ha sido guardado con exito!');
+    
+//     alert('¡Felicidades ya tenes tu lugar en la carrera!');
+    
+//     regCarrera = false;W
+    
+//     }
+//     else {
+    
+//     alert('El correo no coincide, confirme nuevamente los datos.')
+
+//     }
+// }
+
+// ciclismo(horario(), terreno());
+
+// function horario(){
+    
+//     const CAT1 = "10:00";
+//     const CAT2 = "11:00";
+//     const CAT3 = "12:00";
+//     const CAT4 = "13:00";
+//     const CAT5 = "14:00";
+    
+//     let horario = Number(prompt("Digite la categoria a la que perteneces" + " \n1.CAT-1 pre-juvenil " + CAT1 + "\n2.CAT-2 juvenil " + CAT2 + "\n3.CAT-3 Sub 23 " + CAT3 + "\n4.CAT-4 Élite " + CAT4+ "\n5.CAT-5 Ciclismo máster " + CAT5 ));
+    
+//     switch (horario) {
+//         case 1:
+//             alert("El horario de su categoria es: " + CAT1);
+//             return horario = CAT1;
+//         case 2:
+//             alert("El horario de su categoria es: " + CAT2);
+//             return horario = CAT2;
+//         case 3:
+//             alert("El horario de su categoria es: " + CAT3);
+//             return horario = CAT3;
+//         case 4:
+//             alert("El horario de su categoria es: " + CAT4);
+//             return horario = CAT4;
+//         case 5:
+//             alert("El horario de su categoria es: " + CAT5);
+//             return horario = CAT5;
+//         default:
+//             alert("no eligio una categoria existente");
+//             return horario = "No existe";
+//     }
+// }
+
+// function terreno(){
+
+//     const terreno1 = "15km";
+//     const terreno2 = "30km";
+//     const terreno3 = "50km";
+//     const terreno4 = "100km";
+//     const terreno5 = "150km";
+
+//     let terreno = Number(prompt("¿tenemos 5 circuitos, en cual quieres competir?" +
+//         ": \n1. " + terreno1 + "\n2. " + terreno2 + "\n3. " + terreno3 + "\n4. " + terreno4 + "\n5. " + terreno5 ));
+
+//     switch (terreno) {
+//         case 1:
+//             alert("El circuito seleccionado es: " + terreno1);
+//             return terreno = terreno1;
+//         case 2:
+//             alert("El circuito seleccionado es: " + terreno2);
+//             return terreno = terreno2;
+//         case 3:
+//             alert("El circuito seleccionado es: " + terreno3);
+//             return terreno = terreno3;
+//         case 4:
+//             alert("El circuito seleccionado es: " + terreno4);
+//             return terreno = terreno4;
+//         case 5:
+//             alert("El circuito seleccionado es: " + terreno5);
+//             return terreno = terreno5;
+//         default:
+//             alert("El circuito seleccionado no existe");
+//             return terreno = "No existe";   
+//     }
+// }
+
+// } while (regCarrera);
+
+
+// ////////////////////////////////////////iniciando carrito/////////////////////////////////////////////////////
+
+// const nombres = ['matias','jose', 'miguel'];
+// let nuevoUsuario = '' ;
+// alert('BIENVENIDO A BIKESTORE');
+// do{
+//   if( nuevoUsuario != '' ) {
+//     alert('el nombre de usuario ya esta registrado, ingrese otro');
+//   }
+//   nuevoUsuario = prompt('Ingrese un nombre de usuario: ');
+// }while (nombres.indexOf( nuevoUsuario )!= -1);
+// alert('Felicidades ' + nuevoUsuario +' se registro su nombre de usuario de forma exitosa');
+// alert(' puede realizar su compra en BIKESTORE');
+
+// const bicicletas = [
+//   {
+//     bicicleta: 'bike 1',
+//     precio: 1000,
+//   },
+//   {
+//     bicicleta: 'bike 2',
+//     precio: 900,
+//   },
+//   {
+//     bicicleta: 'bike 3',
+//     precio: 1000,
+//   },
+// ];
+
+// let carrito = [];
+// let seleccion = prompt('hola, ¿quiere comprar una bicicleta?, ¿si o no?');
+
+// while (seleccion != 'si' && seleccion != 'no') {
+//   alert('Ingrese Si para continuar y No para finalizar');
+//   seleccion = prompt('hola, ¿quiere comprar una bicicleta?, ¿si o no?');
+// }
+
+// if (seleccion == 'si') {
+//   alert('Tenemos los sigientes modelos en OFERTA');
+//   let todasLasBicicletas = bicicletas.map((bicicleta) => bicicleta.bicicleta + " " + bicicleta.precio + "$");
+//   alert(todasLasBicicletas.join(' - '));
+// } else if (seleccion == 'no') {
+//   alert('Gracias por elegirnos.. espero que vuelvas pronto');
+// }
+// while (seleccion == 'si') {
+//   let bicicleta = prompt('agrege el modelo que quieras comprar al carrito, segun el numero de producto');
+//   let precio = 0;
+
+//   if (
+//     bicicleta == 'bike 1'||
+//     bicicleta == 'bike 2'||
+//     bicicleta == 'bike 3'
+//   ) {
+//     switch (bicicleta) {
+//       case 'bike 1':
+//         precio = 1000;
+//         break;
+//       case 'bike 2':
+//         precio = 900;
+//         break;
+//       case 'bike 3':
+//         precio = 1000;
+//         break;
+//       default:
+//         break;
+//     }
+//   } else {
+//     alert('no tenemos ese modelo en stock');
+//   }
+//   let unidades = parseInt(prompt('¿Cuantas unidades quiere comprar?'));
+//   carrito.push({ bicicleta, unidades, precio }); 
+//   carrito.forEach((finalizoCompra) =>{
+//       console.log([`bicicleta: ${finalizoCompra.bicicleta}, unidades: ${finalizoCompra.unidades}, total: $${finalizoCompra.unidades * finalizoCompra.precio}`]);
+//     });
+//   seleccion = prompt('¿quiere agregar algo mas al compra? si o no');
+//   while (seleccion == 'no') {
+//     alert('gracias por la compra!');
+//   break;
+// }
+// }
+
+
+
+
+
+
+//filtrar busqueda por nombre o precio//
+//  const resultado = bicicletas.filter((el) => el.modelo.includes('9.9'))
+//  const resultado2 = bicicletas.filter((el) => el.precio < 2000)
+//  console.log(resultado)
+//  console.log(resultado2)
+
+//  const miCompra = [
+//   { nombre: 'Desarrollo Web', precio: 20000 },
+//   { nombre: 'Javascript', precio: 18750 },
+//   { nombre: 'ReactJS', precio: 27500 }
+//  ]
+//  const total = miCompra.reduce((acc, el) => acc + el.precio, 0)
+//  console.log(total) // 6625
+
+ // append, prepend, appendChild
+/*
+    1. Append: nos permite adjuntar un objeto nodo o un 
+    DOMString después del último elemento hijo del elemento 
+    padre. Dicho de otra forma, podremos añadir dentro de un 
+    elemento padre (un div, un parrafo,etc) otro nuevo elemento 
+    o una cadena de texto.
+
+    2. Prepend: funciona igual que el método .append() pero 
+    en este caso, colocara el nodo o el DOMstring delante de 
+    cualquier elemento hijo dentro del elemento padre.
+
+    3. AppendChild: appendchild es parecido al método .append 
+    pero en este caso solo admitirá nodos, por lo que NO podremos usar DOMString.
+*/
